@@ -27,9 +27,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest
-          if [ -f requirements.txt ]; then
-            pip install -r requirements.txt
+          pip install -r requirements.txt
           
 
       
@@ -64,9 +62,7 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/python-app:latest
 
 
-  # =========================
-  # CD: Deploy
-  # =========================
+ 
   deploy:
     needs: docker
     runs-on: ubuntu-latest
